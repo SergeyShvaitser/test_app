@@ -1,5 +1,5 @@
 const isUserLogged = () => {
-  return true
+  return !!localStorage.getItem('user')
 }
 
 export default isUserLogged

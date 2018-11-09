@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
 
 class Login extends Component {
+
+  static propTypes = {
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }).isRequired,
+  }
 
   constructor(){
     super()
@@ -22,7 +29,10 @@ class Login extends Component {
   }
 
   login(){
-    console.log(this.state)
+    localStorage.setItem('user', JSON.stringify(this.state.user))
+    this.props.history.push({
+      pathname: '/',
+    })
   }
 
   render(){
@@ -34,14 +44,17 @@ class Login extends Component {
         <ControlLabel>Login Form</ControlLabel>
         <FormGroup>
           <FormControl
+            name="login"
             type="text"
             value={this.state.user.login}
             onChange={this.handleLoginChange}
             placeholder="Login"
+            autoComplete="off"
           />
         </FormGroup>
         <FormGroup>
           <FormControl
+            name="password"
             type="password"
             value={this.state.user.password}
             onChange={this.handlePasswordChange}
