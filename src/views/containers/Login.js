@@ -49,7 +49,6 @@ class Login extends Component {
             value={this.state.user.login}
             onChange={this.handleLoginChange}
             placeholder="Login"
-            autoComplete="off"
           />
         </FormGroup>
         <FormGroup>

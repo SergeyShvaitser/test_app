@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 30px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,6 +11,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  margin-top: 0;
 }
 
 #login-form {
@@ -26,4 +30,53 @@ code {
 
 #login-btn {
   float: right;
+}
+
+#account-form {
+  width: 425px;
+  max-height: 270px;
+  flex: 0 0 230;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  transition: width 2s ease-out;
+}
+
+#dashboard-wrapper {
+  display: flex;
+  margin-top: 30px;
+}
+
+#accounts-list {
+  padding-left: 30px;
+  flex-grow: 2;
+}
+
+#account-form-footer {
+  margin-top: 25px;
+}
+
+#list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+#main-fields {
+  display: flex;
+  align-items: center;
+}
+
+#main-fields p {
+  margin-bottom: 0;
+  flex-grow: 1;
+  min-width: 200px;
+  padding-right: 20px;
+}
+
+#remove {
+
 }
