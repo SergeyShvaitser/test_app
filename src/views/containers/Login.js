@@ -1,21 +1,55 @@
 import React, { Component } from 'react'
+import { FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
 
 class Login extends Component {
 
   constructor(){
     super()
+    this.state = {
+      user: {}
+    }
     this.login = this.login.bind(this)
+    this.handleLoginChange = this.handleLoginChange.bind(this)
+    this.handlePasswordChange = this.handlePasswordChange.bind(this)
+  }
+
+  handleLoginChange(e) {
+    this.setState({user: {...this.state.user, login: e.target.value}});
+  }
+
+  handlePasswordChange(e) {
+    this.setState({user: {...this.state.user, password: e.target.value}});
   }
 
   login(){
-    console.log('login')
+    console.log(this.state)
   }
 
   render(){
+
+    let {login, password} = this.state.user
+
     return (
-      <div>
-        123
-      </div>
+      <form id='login-form'>
+        <ControlLabel>Login Form</ControlLabel>
+        <FormGroup>
+          <FormControl
+            type="text"
+            value={this.state.user.login}
+            onChange={this.handleLoginChange}
+            placeholder="Login"
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormControl
+            type="password"
+            value={this.state.user.password}
+            onChange={this.handlePasswordChange}
+            placeholder="Password"
+          />
+        </FormGroup>
+        <Button id="login-btn" bsStyle="primary" onClick={this.login} disabled={!login || !password}>Log in</Button>
+      </form>
     )
   }
 

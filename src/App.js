@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Redirect, Switch } from 'react-router-dom'
 import renderRoutes from 'utils/renderRoutes'
 import { routes } from 'routes'
+import './index.css';
 
 const App = () => (
   <BrowserRouter>
