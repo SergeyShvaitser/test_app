@@ -9,7 +9,7 @@ const App = () => (
     <div>
       <Switch>
         {renderRoutes(routes)}
-        <Redirect to={{ pathname: '/test_app/login' }} />
+        <Redirect to={{ pathname: '/login' }} />
       </Switch>
     </div>
   </BrowserRouter>
