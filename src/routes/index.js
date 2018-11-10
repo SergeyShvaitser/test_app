@@ -3,13 +3,13 @@ import Login from 'views/containers/Login'
 
 export const routes = [
   {
-    path: '/',
+    path: '/test_app',
     component: Dashboard,
     authenticate: true,
     exact: true,
   },
   {
-    path: '/login',
+    path: '/test_app/login',
     component: Login,
     exact: true,
   }
